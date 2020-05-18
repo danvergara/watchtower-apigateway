@@ -1,0 +1,65 @@
+{
+	"version": 2,
+	"name": "Watchtower project gateway",
+	"port": 8080,
+	"host": [
+		"http://127.0.0.1:8080"
+	],
+	"endpoints": [
+		{
+			"endpoint": "/dashboardserver/current-weather",
+			"method": "GET",
+			"backend": [{
+				"host": [
+					"http://dashboardserver:8000"
+				],
+				"url_pattern": "/v1/current-weather"
+			}],
+			"concurrent_calls": 2
+		},
+		{
+			"endpoint": "/dashboardserver/weather-forecast",
+			"method": "GET",
+			"backend": [{
+				"host": [
+					"http://dashboardserver:8000"
+				],
+				"url_pattern": "/v1/weather-forecast"
+			}],
+			"concurrent_calls": 2
+		},
+		{
+			"endpoint": "/dashboardserver/top-news",
+			"method": "GET",
+			"backend": [{
+				"host": [
+					"http://dashboardserver:8000"
+				],
+				"url_pattern": "/v1/top-news"
+			}],
+			"concurrent_calls": 2
+		},
+		{
+			"endpoint": "/dashboardserver/currency-exchange",
+			"method": "GET",
+			"backend": [{
+				"host": [
+					"http://dashboardserver:8000"
+				],
+				"url_pattern": "/v1/currency-exchange"
+			}],
+			"concurrent_calls": 2
+		},
+		{
+			"endpoint": "/dashboardserver/historical-currency-rates",
+			"method": "GET",
+			"backend": [{
+				"host": [
+					"http://dashboardserver:8000"
+				],
+				"url_pattern": "/v1/historical-currency-rates"
+			}],
+			"concurrent_calls": 2
+		}
+	]
+}

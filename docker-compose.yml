@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - 8080:8080
+    networks:
+      - watchtower-net
+
+networks:
+  watchtower-net:
+    driver: bridge
