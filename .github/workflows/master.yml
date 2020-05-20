@@ -24,5 +24,5 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          repository: danvergara/dashboardserver
+          repository: danvergara/apigateway
           tags: "latest,${{ env.RELEASE_VERSION }}"
